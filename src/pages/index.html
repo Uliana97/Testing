@@ -1,0 +1,51 @@
+{% set cards = [{ heading: "Epic project", img: "img/work1.jpg", text: "Lorem
+ipsum dolor sit amet consectetur adipisicing elit. Fugit, sunt.", id: 1 }, {
+heading: "Another work i did", img: "img/work2.jpg", text: "Lorem ipsum dolor
+sit amet consectetur adipisicing elit. Fugit, sunt.", id: 2 }, { heading:
+"Rebrand of this company", img: "img/work3.jpg", text: "Lorem ipsum dolor sit
+amet consectetur adipisicing elit. Fugit, sunt.", id: 3 } ] %} {% extends
+"layout.html" %} {% block content %}
+<main class="content">
+  <div class="container">
+    <div class="hero">
+      <div class="hero__descr hero-descr">
+        <h1 class="hero-descr__header">Jack Jackson</h1>
+        <p class="hero-descr__text">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias aut
+          blanditiis commodi aspernatur, expedita laborum sed dolor quae
+          recusandae. Cum earum perspiciatis harum culpa cumque voluptatibus
+          minus soluta! Incidunt, quod.lorem Lorem ipsum dolor sit amet
+          consectetur adipisicing elit. Dolores, quisquam! Velit eius,
+          dignissimos, a error quasi obcaecati nobis vel fuga odit explicabo?
+        </p>
+
+        <div class="hero-descr__btn btn">
+          <a href="#" class="btn__link">Learn more</a>
+        </div>
+      </div>
+
+      <div class="hero__picture">
+        <img src="img/mainPic.jpg" alt="picture" />
+      </div>
+    </div>
+
+    <div class="work">
+      <p class="work__header">What i did</p>
+
+      <div class="work__cards">
+        {% for item in cards %}
+        <div class="work__card work-card">
+          <div class="work-card__image">
+            <img src="{{item.img}}" alt="work1" />
+          </div>
+          <div class="work-card__descr">
+            <div class="work-card__title">{{item.heading}}</div>
+            <div class="work-card__text">{{item.text}}</div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</main>
+{% endblock %}

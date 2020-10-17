@@ -1,0 +1,92 @@
+.work {
+  &__header {
+    font-size: 30px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+
+    @include breakpoint($medium) {
+      text-align: center;
+    }
+  }
+
+  &__cards {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include breakpoint($medium) {
+      flex-wrap: wrap;
+      flex-direction: column;
+    }
+  }
+}
+
+.work-card {
+  max-width: 30%;
+  margin-bottom: 150px;
+  background: $Active;
+  color: $TextWhite;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.39, 0.575, 0.565, 1);
+  &:hover {
+    transform: translateY(5px);
+  }
+
+  @include breakpoint($medium) {
+    margin-bottom: 50px;
+  }
+
+  @include breakpoint($small) {
+    max-width: 45%;
+  }
+
+  @include breakpoint($xsmall) {
+    max-width: 60%;
+  }
+
+  &:hover {
+    background: lighten($Active, 10%);
+  }
+
+  &__image {
+    width: 100%;
+    margin-bottom: 20px;
+    position: relative;
+
+    &::before {
+      @include coloring($Active);
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 85%;
+      height: 85%;
+      top: 50%;
+      left: 50%;
+      border: 1px solid $TextWhite;
+      transform: translate(-50%, -50%);
+    }
+
+    & img {
+      width: 100%;
+      max-height: 180px;
+    }
+  }
+
+  &__descr {
+    padding: 10px;
+    min-height: 100px;
+  }
+
+  &__title {
+    font-size: 18px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+
+    @include breakpoint($small) {
+      margin-bottom: 10px;
+      font-size: 16px;
+    }
+  }
+}

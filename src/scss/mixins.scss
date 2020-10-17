@@ -1,0 +1,23 @@
+@mixin breakpoint($querystring) {
+  $valid: true;
+  @if type-of($querystring) != "string" {
+    @warn "querystring: #{$querystring} is not a string";
+    $valid: false;
+  }
+  @if $valid == true {
+    @media #{$querystring} {
+      @content;
+    }
+  }
+}
+
+@mixin coloring($color) {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: lighten($color, 10%);
+  opacity: 20%;
+}

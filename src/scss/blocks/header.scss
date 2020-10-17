@@ -1,0 +1,56 @@
+.wrapper {
+  color: $Text;
+  line-height: 1;
+  background: $Main;
+}
+
+.container {
+  max-width: 1000px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.header {
+  width: 100%;
+  height: 65px;
+  background: $Header;
+  margin-bottom: 150px;
+
+  @include breakpoint($medium) {
+    margin-bottom: 100px;
+  }
+
+  @include breakpoint($small) {
+    margin-bottom: 50px;
+  }
+}
+
+.header-nav {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  @include breakpoint($small) {
+    justify-content: center;
+  }
+
+  &__item {
+    &:not(:last-of-type) {
+      margin-right: 35px;
+    }
+  }
+
+  &__link {
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    font-weight: lighter;
+    color: $Text;
+
+    &:hover {
+      color: $TextWhite;
+    }
+  }
+}

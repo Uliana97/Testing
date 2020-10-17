@@ -1,0 +1,13 @@
+{% set links = [{ text: "Home", id: 1 }, { text: "About me", id: 2 }, { text:
+"My work", id: 3 } ] %}
+<header class="header">
+  <div class="container">
+    <ul class="header__nav header-nav">
+      {% for item in links %}
+      <li class="header-nav__item">
+        <a href="#" class="header-nav__link">{{item.text}}</a>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</header>
